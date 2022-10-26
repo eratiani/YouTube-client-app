@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "eslint-config-airbnb-angular": "^1.0.0"
+  }
+}
