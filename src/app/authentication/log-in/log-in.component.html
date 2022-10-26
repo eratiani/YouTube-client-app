@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container">
+    <div class="language-Bar col-3" >
+   
+  </div>
+      <form class="form" [formGroup]="logInForm" (ngSubmit)="postData();">
+          <!-- Email input -->
+          <div class="col-xs-6 container__form ">
+          <h1 class="m-5 form--header">{{"log in to your account" }}</h1>
+          <div class="form-outline mb-4">
+              <input type="text" id="form2Example1" class="form-control" formControlName="nickNameInput"/>
+              <label class="form-label" for="form2Example1">{{"Your Nickname" }}</label>
+              <div *ngIf="logInForm.get('nickNameInput')?.touched && logInForm.get('nickNameInput')?.hasError('required')">{{"Type Your Nickname Here" }}</div>
+            </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" formControlName="passwordInput"/>
+            <label class="form-label" for="form2Example2">{{"Password" }}</label>
+            <div *ngIf="logInForm.get('passwordInput')?.touched && logInForm.get('passwordInput')?.hasError('required')">{{"Type Your Password Here" }}</div>
+            <div *ngIf="logInForm.get('passwordInput')?.touched && logInForm.get('passwordInput')?.hasError('minlength')">{{"Minimum 8 Characters Required" }}</div>
+          </div>
+          <!-- 2 column grid layout for inline styling -->
+          <div class="row mb-4">
+           
+            <div class="col">
+              <!-- Simple link -->
+            </div>
+          </div>
+        
+          <!-- Submit button -->
+          <div class=" container__buttons d-flex flex-column">
+
+            <div class="col-xs-3">
+              <button type="submit" class="btn btn-primary btn-block m-4 w-100" [disabled]="!logInForm.valid">{{"log in" }}</button>
+            </div>
+            <div class="col-xs-3 mt-2">
+
+              <a class="btn btn-primary btn-block m-4" href="register">{{"register" }}</a>
+            </div>
+          </div>
+        </div>
+        </form>
+  </div>

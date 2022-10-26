@@ -1,0 +1,35 @@
+.cards__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.cards__container:before,
+.cards__container:after {
+  content: none !important;
+}
+.card-img-top {
+  width: 35rem;
+  height: 150px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: flex-end;
+  margin-bottom: 3%;
+}
+.card-text-paragraph{
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+}
+.statistics__container__ul{
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+.statistics__container__ul>li{
+  margin-right: 15px;
+}
+.statistics__container__ul>li>span {
+  margin-right: 5px;
+}

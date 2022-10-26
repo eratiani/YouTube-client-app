@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div  class="container cards__container" >
+    <div  class="card" style="width: 35rem; " *ngFor="let card of json.items,let i=index">
+        <img src="{{ card.snippet.thumbnails.default.url }}" class="card-img-top" alt="{{card.kind}}">
+        <div id=`{{i}}` class="card-body">
+          <h3 class="card-title">{{card.snippet.title}}</h3>
+          <div class="statistics__container">
+            <ul class="statistics__container__ul">
+              <li><span><img src="../../../assets/viewed.png" alt="view"></span><span>{{card.statistics.viewCount}}</span></li>
+              <li><span><img src="../../../assets/liked.png" alt="view"></span><span>{{card.statistics.likeCount}}</span></li>
+              <li><span><img src="../../../assets/dislike.png" alt="view"></span><span>{{card.statistics.dislikeCount}}</span></li>
+              <li><span><img src="../../../assets/Group 9.png" alt="view"></span><span>{{card.statistics.commentCount}}</span></li>
+            </ul>
+          </div>
+          <h4 class="card-title">{{card.snippet.channelTitle}}</h4>
+          <p class="publishDate">{{ card.snippet.publishedAt }}</p>
+          <p class="card-text-paragraph" style= "width: 25rem; height: 100px; overflow: hidden;">{{card.snippet.description}}</p>
+          <a href="search\{{card.id}}" class="btn btn-primary">More Details</a>
+          <div class="color_highlight" style="height: 20px;" [style.backgroundColor]=" myHighlightFunc(card.snippet.publishedAt) ">
+
+          </div>
+        </div>
+    </div>
+</div>

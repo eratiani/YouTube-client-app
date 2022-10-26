@@ -1,0 +1,45 @@
+<div class="my__container">
+    <div class="container my__container--secondary ">
+        <nav class="navbar bg-light my__navbar">
+            <div class="container-fluid  ">
+            <a href="#" class="logo navbar-brand "><img src="../../../assets/play.png" alt="logo"></a>
+            <form class="d-flex" role="search">
+                <div class="row d-flex ">
+                    <div class="col-xs-4 ">
+                            <input class="form-control me-2  " type="search" placeholder="Search" aria-label="Search">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <a (click)="navigateSearch($event)" class="btn btn-outline-success bg-primary " >Search</a>
+                    </div>
+                    <div class="col-xs-1 ">
+                        <a (click)=toggleDisplaySort($event) class="d-block person__img--container" href="#"><img class="" src="../../../assets/sortBtn.png" alt="btn"></a>
+                    </div>
+                    <div class="col-xs-5 login__container">
+                        <h5 class="login__container--name">{{ name }} </h5>
+                        <a  class="d-block person__img--container" href="#"><img class="" src="../../../assets/person.png" alt="btn"></a>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </nav>
+        <div *ngIf="!isShowSort" class="sorting__container">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <h4 class="sorting__container--header">Sort By</h4>
+                  </li>
+                <li class="nav-item">
+                    
+                  <a (click)="filterDate($event)" class="nav-link active"  >date</a>
+                </li>
+                <li class="nav-item">
+                  <a (click)="filterCountOfView($event)" class="nav-link" >count of views</a>
+                </li>
+                <li class="nav-item sorting__container--li ">
+                  <a class="nav-link disabled">by word or sentence</a>
+                  <input (input)="filterByInput()"  class=" my__input--sort " >
+                </li>
+              </ul>
+        </div>
+    </div>
+    
+</div> 
